@@ -58,7 +58,7 @@ def getAssessmentData():
 	return
 
 def file_ouput():
-	i =1 
+	i =0
 	fileName = 'Assessments.csv'
 	os.chdir('C:\\Users\\Shirley\\Desktop\\PythonProjects\\CourseAssessments')
 	if os.path.isfile(fileName):
@@ -71,6 +71,7 @@ def file_ouput():
 		sys.exit()
 	writer = csv.writer(f)
 	for tables in tableList:
+		i+=1
 		writer.writerow([sys.argv[i]])
 		for rows in tables:
 			writer.writerow(rows)
