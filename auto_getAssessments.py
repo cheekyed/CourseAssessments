@@ -4,7 +4,7 @@ import socket
 from bs4 import BeautifulSoup
 
 courseUrlList = []
-pageHtmlList = []
+tableRows = []
 maintenanceUrl = "http://maintenance.business.unsw.edu.au/#assessment"
 
 
@@ -12,6 +12,7 @@ def addUrls():
 	for i in range (1,len(sys.argv)):
 		courseUrl = 'https://www.business.unsw.edu.au/degrees-courses/course-outlines/archives/' + sys.argv[i] + '#assessment'
 		courseUrlList.append(courseUrl)
+		print(courseUrlList)
 		return
 
 def internet_on():
@@ -23,26 +24,45 @@ def internet_on():
 		sys.exit()
 	return
 
-def getHtml():
+def getAssessmentData():
 	for url in courseUrlList:
+		counter = 1
 		page = urlopen(url)
 		if page.geturl() == maintenanceUrl:
 			print('page is under maintenance')
 			sys.exit()
 		else:
 			pageHtml = BeautifulSoup(page, 'html.parser')
-			pageHtmlList.append(pageHtml)
-		print('page html successfully acquired')
+			print(sys.argv[counter] + ' html successfully acquired')
+			counter +=1 
+			table = pageHtml.find('table', attrs={'id' : 'assessment-table'})
+			table_body = table.find('tbody')
+			rows = table_body.find_all('tr')
+			for row in rows:
+				elementTags = row.find_all(['td','th'])
+				elementsList = []
+				for ele in elementTags:
+					if ele.text.strip() != 'Length' or ele.text.strip() == '-':
+						elementsList.append(ele.text.strip())
+						print(ele.text.strip())	
+				print('=========')
+				tableRows.append(elementsList)
+			print(tableRows)
 		return
+
+def file_ouput():
+
+	 return
 
 def main ():
 	addUrls()
 	internet_on()
-	getHtml()
- 
+	getAssessmentData()
+ 	
 
 
 
 
 if __name__ == '__main__':
 	main()
+
