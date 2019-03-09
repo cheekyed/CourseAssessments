@@ -23,5 +23,6 @@ install python libraries using requirements.txt using this command 'python -m pi
 
 
 ###########Script requires arguements to run###############
+can specify as many arguements as you want 
 
 arguements have to be in format courseCode-YEAR-Semester eg (INFS3603-2019-T1)
