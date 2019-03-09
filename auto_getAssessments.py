@@ -60,15 +60,15 @@ def getAssessmentData():
 def file_ouput():
 	i =0
 	fileName = 'Assessments.csv'
-	os.chdir('C:\\Users\\Shirley\\Desktop\\PythonProjects\\CourseAssessments')
-	if os.path.isfile(fileName):
-		os.remove(fileName)
-		print(fileName + ' removed')
 	try:
+		if os.path.isfile(fileName):
+			os.remove(fileName)
+			print(fileName + ' removed')
 		f = open(fileName,'w', newline = '')
 	except:
-		print('Assessments.csv is already open. need to close before writing')
+		print('Assessments.csv is already open. need to close before writing and removing')
 		sys.exit()
+		
 	writer = csv.writer(f)
 	for tables in tableList:
 		i+=1
