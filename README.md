@@ -8,7 +8,7 @@ Web scrapes assessment criteria from course outlines of the UNSW business school
 
 ############Requirements###################
 
-only works with course outlines from business school 
+Only works with course outlines from UNSW business school 
 
 python3
 
@@ -16,15 +16,15 @@ Create a python virtual environment for project in the project folder - https://
 
 Need to activate the virtual environment using command 'source activate' in path '/virtualenvironment/Scripts' in project folder 
 
-install python libraries using requirements.txt using this command 'python -m pip install -r requirements.txt'
+Install python libraries using requirements.txt using this command 'python -m pip install -r requirements.txt'
 
 
 
 
 
 
-###########Script requires arguements to run###############
+###########Script requires arguments to run###############
 
-can specify as many arguements as you want 
+Can specify as many arguments as you want 
 
-arguements have to be in format courseCode-YEAR-Semester eg (INFS3603-2019-T1)
+Arguements have to be in format courseCode-YEAR-Semester eg (INFS3603-2019-T1)
