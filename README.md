@@ -7,6 +7,7 @@ Web scrapes assessment criteria from course outlines of the UNSW business school
 
 
 ############Requirements###################
+
 only works with course outlines from business school 
 
 python3
