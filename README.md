@@ -1,4 +1,4 @@
-############What my script does? #############
+## What my script does? 
 
 
 Web scrapes assessment criteria from course outlines of the UNSW business school and outputs it into a CSV file located in the project folder. 
@@ -6,7 +6,7 @@ Web scrapes assessment criteria from course outlines of the UNSW business school
 
 
 
-############Requirements###################
+## Requirements
 
 Only works with course outlines from UNSW business school 
 
@@ -23,7 +23,7 @@ Install python libraries using requirements.txt using this command 'python -m pi
 
 
 
-###########Script requires arguments to run###############
+## Script requires arguments to run
 
 Can specify as many arguments as you want 
 
